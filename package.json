@@ -1,6 +1,6 @@
 {
   "name": "beidou",
-  "version": "2.3.5",
+  "version": "2.4.0",
   "description": "云南成为车联网北斗服务平台",
   "homepage": "http://www.yncwbd.com",
   "author": {
@@ -31,7 +31,7 @@
   "build": {
     "productName": "Beidou",
     "appId": "com.yncwbd.beidou",
-    "artifactName": "${productName}-Setup-x64.${ext}",
+    "artifactName": "${productName}-Setup-mac.${ext}",
     "asar": true,
     "directories": {
       "output": "release"
@@ -40,6 +40,34 @@
       "**/*",
       "./main.js"
     ],
+    "dmg": {
+      "window": {
+        "width": 540,
+        "height": 380
+      },
+      "contents": [
+        {
+          "x": 410,
+          "y": 230,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 230,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "type": "distribution",
+      "darkModeSupport": true,
+      "category": "public.app-category.utilities"
+    },
     "win": {
       "target": [
         "nsis"
@@ -55,7 +83,7 @@
     "publish": [
       {
         "provider": "generic",
-        "url": "http://www.yncwbd.com:13510/win64/"
+        "url": "http://www.yncwbd.com:13510/mac/"
       },
       {
         "provider": "github"
