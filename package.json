@@ -40,6 +40,27 @@
       "**/*",
       "./main.js"
     ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "static/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://www.yncwbd.com:13510/mac/"
+      },
+      {
+        "provider": "github"
+      }
+    ],
     "dmg": {
       "window": {
         "width": 540,
@@ -67,28 +88,7 @@
       "type": "distribution",
       "darkModeSupport": true,
       "category": "public.app-category.utilities"
-    },
-    "win": {
-      "target": [
-        "nsis"
-      ],
-      "icon": "static/icon.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
-      "deleteAppDataOnUninstall": false
-    },
-    "publish": [
-      {
-        "provider": "generic",
-        "url": "http://www.yncwbd.com:13510/mac/"
-      },
-      {
-        "provider": "github"
-      }
-    ]
+    }
   },
   "keywords": [
     "Electron",
